@@ -21,12 +21,12 @@
       "label": "Authentication"
     },
     {
-      "id": "activation",
-      "label": "Activation"
+      "id": "config",
+      "label": "Connector Configuration"
     },
     {
-      "id": "config",
-      "label": "Email server configuration"
+      "id": "activation",
+      "label": "Activation"
     },
     {
       "id": "output",
@@ -156,6 +156,46 @@
       "constraints": {
         "notEmpty": true
       }
+    },
+    {
+      "label": "Correlation key (process)",
+      "type": "String",
+      "group": "activation",
+      "feel": "required",
+      "description": "Sets up the correlation key from process variables",
+      "binding": {
+        "type": "bpmn:Message#zeebe:subscription#property",
+        "name": "correlationKey"
+      },
+      "constraints": {
+        "notEmpty": true
+      }
+    },
+    {
+      "label": "Correlation key (payload)",
+      "type": "String",
+      "group": "activation",
+      "feel": "required",
+      "binding": {
+        "type": "zeebe:property",
+        "name": "correlationKeyExpression"
+      },
+      "description": "Extracts the correlation key from the incoming message payload",
+      "constraints": {
+        "notEmpty": true
+      }
+    },
+    {
+      "label": "Activation condition",
+      "type": "String",
+      "group": "activation",
+      "feel": "required",
+      "optional": true,
+      "binding": {
+        "type": "zeebe:property",
+        "name": "activationCondition"
+      },
+      "description": "Condition under which the Connector triggers. Leave empty to catch all events"
     },
     {
       "label": "Event variable",
