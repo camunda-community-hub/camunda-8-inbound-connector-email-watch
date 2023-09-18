@@ -1,8 +1,8 @@
 {
   "$schema": "https://unpkg.com/@camunda/zeebe-element-templates-json-schema/resources/schema.json",
-  "name": "email-watch-start-connector",
+  "name": "Email Watch Inbound Connector",
   "id": "io.camunda.connectors.EmailWatchService.start",
-  "description": "Listen for new emails start a process",
+  "description": "Listen for new emails to start a process",
   "category": {
     "id": "connectors",
     "name": "Connectors"

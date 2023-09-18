@@ -1,8 +1,8 @@
 {
   "$schema": "https://unpkg.com/@camunda/zeebe-element-templates-json-schema/resources/schema.json",
-  "name": "File Watch Intermediate Connector",
-  "id": "io.camunda.connectors.WatchService.intermediate",
-  "description": "Listen for Create, Modify, and Delete file events in an intermediate event",
+  "name": "Email Watch Intermediate Connector",
+  "id": "io.camunda.connectors.EmailWatchService.intermediate",
+  "description": "Listen for new emails and send messages to process instances",
   "category": {
     "id": "connectors",
     "name": "Connectors"
