@@ -1,6 +1,5 @@
 package io.camunda.connector.inbound;
 
-import io.camunda.connector.api.annotation.Secret;
 
 /**
  * Configuration properties for inbound Connector
