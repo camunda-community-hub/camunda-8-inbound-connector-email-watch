@@ -32,7 +32,18 @@ public class EmailMessageHandler {
                     BodyPart bodyPart = multiPart.getBodyPart(i);
                     if (bodyPart.isMimeType("text/plain")) {
                         parts.add(bodyPart.getContent());
-                        LOG.info("Body {}", bodyPart.getContent());
+                        LOG.info("Body  - ", bodyPart.getContent());
+                    }
+
+                    if (bodyPart.isMimeType("multipart/alternative")) {
+                        Multipart subMulti = (Multipart) bodyPart.getContent();
+                        for (int z = 0; z < subMulti.getCount(); z++) {
+                            BodyPart subMultiBodyPart = subMulti.getBodyPart(z);
+                            if (subMultiBodyPart.isMimeType("text/plain")) {
+                                parts.add(subMultiBodyPart.getContent());
+                                LOG.info("Sub Body - ", subMultiBodyPart.getContent());
+                            }
+                        }
                     }
                 }
                 emailBody = parts.toArray(Object[]::new);
