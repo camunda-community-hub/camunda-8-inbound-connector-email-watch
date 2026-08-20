@@ -40,6 +40,6 @@ public class MyConnectorExecutable implements InboundConnectorExecutable {
 
   private void onEvent(EmailWatchServiceSubscriptionEvent rawEvent) {
     MyConnectorEvent connectorEvent = new MyConnectorEvent(rawEvent);
-    connectorContext.correlate(connectorEvent);
+    connectorContext.correlateWithResult(connectorEvent);
   }
 }
